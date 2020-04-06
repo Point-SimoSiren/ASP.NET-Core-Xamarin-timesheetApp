@@ -1,1 +1,8 @@
-I put only codes that I have written myself, so you need to have to set up projects yourself before copying code
+I mostly put codes that I have written myself,
+so you need to set up projects yourself before copying class codes.
+
+ASP.NET Core REST API project
+and separately
+Xamarin forms empty project.
+
+see rest api models to get idea of SQL database I have used.
