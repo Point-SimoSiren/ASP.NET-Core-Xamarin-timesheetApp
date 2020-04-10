@@ -5,15 +5,26 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="XamarinTimesheet.EmployeePage">
-
+    
     <StackLayout>
-       
-        <Button Text="Load employees" Clicked="LoadEmployees" HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" ></Button>
 
-        <ListView Margin="50" x:Name="employeeList" BackgroundColor="Purple">
-            
-        </ListView>
+        <Button Text="Aloita painamalla tästä" Clicked="LoadEmployees" Padding="35" HorizontalOptions="Center" BackgroundColor="LightSkyBlue"
+                BorderColor="HotPink" BorderWidth="2"
+           VerticalOptions="CenterAndExpand" >
+        </Button>
+
+        
+
+
+        <Label  Text="...sitten valitse nimesi listalta:" HorizontalOptions="Center" TextColor="Coral" ></Label>
+        
+        <ListView Margin="30" x:Name="employeeList" BackgroundColor="LightBlue" />
+
+        <Button Text="Jatka työtehtäviin" Clicked="LoadAssignmentPage" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"
+                BackgroundColor="LightSkyBlue" BorderColor="HotPink" BorderWidth="2" Padding="35">
+        </Button>
+                
+      
 
     </StackLayout>
 

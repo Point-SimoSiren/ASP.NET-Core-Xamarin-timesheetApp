@@ -10,8 +10,7 @@ using Newtonsoft.Json;
 
 namespace XamarinTimesheet
 {
-    // Learn more about making custom code visible in the Xamarin.Forms previewer
-    // by visiting https://aka.ms/xamarinforms-previewer
+    
     [DesignTimeVisible(false)]
     public partial class EmployeePage : ContentPage
     {
@@ -19,20 +18,25 @@ namespace XamarinTimesheet
         {
             InitializeComponent();
 
-            employeeList.ItemsSource = new string[] { "Janne", "Hanna", "Raimo" };
-            
+            employeeList.ItemsSource = new object[] { "Kello Kalle -sovellus", "Androidille", "Työn iloa!" };    
         }
-
 
         private async void LoadEmployees(object sender, EventArgs e)
         {
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri("https://timesheetrestapi.azurewebsites.net/");
             string json = await client.GetStringAsync("/api/employees/");
-            string[] employees = JsonConvert.DeserializeObject<string[]>(json);
+            object[] employees = JsonConvert.DeserializeObject<object[]>(json);
 
             employeeList.ItemsSource = employees;
 
+        }
+
+        private void LoadAssignmentPage(object sender, EventArgs e)
+        {
+
+            string employee = employeeList.SelectedItem.ToString();
+            Navigation.PushAsync(new WorkAssignmentPage());
         }
     }
 }
