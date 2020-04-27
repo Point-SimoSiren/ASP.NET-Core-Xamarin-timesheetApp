@@ -13,7 +13,7 @@ namespace TimesheetRestApi.Controllers
     public class EmployeesController : ControllerBase
     {
 
-        // Haetaan kaikki aktiiviset työntekijät 
+        // Haetaan kaikki aktiiviset työntekijät mobiilisovelluksen employees sivulle
 
         [HttpGet]
         [Route("")]
@@ -32,7 +32,6 @@ namespace TimesheetRestApi.Controllers
                 return employeeNames;
          }
 
-        // Muut metodit...
     }
 
 }
