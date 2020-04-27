@@ -12,15 +12,19 @@ namespace TimesheetRestApi.Controllers
     [ApiController]
     public class WorkAssignmentsController : ControllerBase
     {
-        [HttpGet]
+    
+    [HttpGet]
         [Route("")]
-        public List<WorkAssignments> GetAll()
+        public string[] GetAll()
         {
+            string[] assignmentNames = null;
             tuntidbContext context = new tuntidbContext();
 
-            List<WorkAssignments> works = context.WorkAssignments.ToList();
+            assignmentNames = (from wa in context.WorkAssignments
+                               where (wa.Active == true)
+                               select wa.Title).ToArray();
 
-            return works;
+            return assignmentNames;
         }
     }
 }
