@@ -4,27 +4,25 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="XamarinTimesheet.EmployeePage">
+             x:Class="XamarinTimesheet.EmployeePage" BackgroundColor="Black" HeightRequest="40">
+
+    <!--- Stack layout pinoaa elementit päällekkäin-->
     
     <StackLayout>
 
-        <Button Text="Aloita painamalla tästä" Clicked="LoadEmployees" Padding="35" HorizontalOptions="Center" BackgroundColor="LightSkyBlue"
-                BorderColor="HotPink" BorderWidth="2"
+        <Button Text="Aloita painamalla tästä" TextColor="White" Clicked="LoadEmployees" Padding="25" CornerRadius="5" BackgroundColor="black" HorizontalOptions="Center"
+                BorderColor="Orange" BorderWidth="1"
            VerticalOptions="CenterAndExpand" >
         </Button>
 
-        
+        <Label  Text="...sitten valitse nimesi listalta:" HorizontalOptions="Center" TextColor="Orange" ></Label>
 
+        <ListView Margin="30" x:Name="employeeList" SeparatorColor="red" BackgroundColor="black" />
 
-        <Label  Text="...sitten valitse nimesi listalta:" HorizontalOptions="Center" TextColor="Coral" ></Label>
-        
-        <ListView Margin="30" x:Name="employeeList" BackgroundColor="LightBlue" />
-
-        <Button Text="Jatka työtehtäviin" Clicked="LoadAssignmentPage" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"
-                BackgroundColor="LightSkyBlue" BorderColor="HotPink" BorderWidth="2" Padding="35">
+        <Button Text="Jatka työtehtäviin" Clicked="LoadAssignmentPage" CornerRadius="5" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"
+                BackgroundColor="black" TextColor="white" BorderColor="Lime" BorderWidth="1" Padding="25">
         </Button>
                 
-      
 
     </StackLayout>
 

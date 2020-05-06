@@ -4,16 +4,48 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="XamarinTimesheet.WorkAssignmentPage">
+             x:Class="XamarinTimesheet.WorkAssignmentPage" BackgroundColor="black">
+    
     <ContentPage.Content>
+        
         <StackLayout>
 
-            <Button Text="Hae työtehtävät" Clicked="LoadWorkAssignments" HorizontalOptions="Center" BackgroundColor="LightSkyBlue" Padding="35" BorderColor="HotPink" BorderWidth="2"
-           VerticalOptions="CenterAndExpand" ></Button>
+            <Button Text="Lataa työtehtävät" Clicked="LoadWorkAssignments" CornerRadius="5" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"
+                BackgroundColor="black" TextColor="White" BorderColor="Orange" BorderWidth="1" Padding="30">
+            </Button>
+          
+        <ListView Margin="50" x:Name="assignmentList" />
 
+            <!-- Latitude näyttäminen-->
+            <StackLayout Orientation="Horizontal">
 
-            <ListView Margin="50" x:Name="assignmentList" />
+                <Label Text="Latitude" TextColor="White"></Label>
+                <Label x:Name="latitudeLabel" Text="" TextColor="White"></Label>
+                </StackLayout>
 
+            <!-- Longitude näyttäminen-->
+            <StackLayout Orientation="Horizontal"> 
+                <Label Text="Longitude" TextColor="White"></Label>
+                <Label x:Name="longitudeLabel" Text="" TextColor="White"></Label>
+                
+            </StackLayout>
+
+            <!-- Aloitus ja lopetus napit-->
+            
+            <StackLayout Orientation="Horizontal" >
+
+                <Button Text="Aloita työ" Clicked="StartWork" CornerRadius="5" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"
+                BackgroundColor="black" TextColor="White" BorderColor="LimeGreen" BorderWidth="1" Padding="30">
+                </Button>
+
+                <Button Text="Lopeta työ" Clicked="StopWork" CornerRadius="5" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"
+                BackgroundColor="black" TextColor="White" BorderColor="MediumVioletRed" BorderWidth="1" Padding="30">
+                </Button>
+
+            </StackLayout>
+            
         </StackLayout>
+        
     </ContentPage.Content>
+    
 </ContentPage>
